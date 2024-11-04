@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+
+        .calculator {
+            width: 200px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .diplay{
+            margin-bottom: 60px;
+        }
+        .diplay input{
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .result{
+            text-align: right;
+            padding: 10px;
+            font-size: 2em;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .buttons{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .buttons button{
+            padding: 15px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .buttons button:hover{
+            background-color: #ddd;
+        }
+   </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <input type="text" id="resultado" readonly>
+        </div>
+        <div class="buttons">
+            <button onclick="insertar('1')">1</button>
+            <button onclick="insertar('2')">2</button>
+            <button onclick="insertar('3')">3</button>
+            <button onclick="operar('+')">+</button>
+            <button onclick="insertar('4')">4</button>
+            <button onclick="insertar('5')">5</button>
+            <button onclick="insertar('6')">6</button>
+            <button onclick="operar('-')">-</button>
+            <button onclick="insertar('7')">7</button>
+            <button onclick="insertar('8')">8</button>
+            <button onclick="insertar('9')">9</button>
+            <button onclick="operar('*')">*</button>
+            <button onclick="insertar('0')">0</button>
+            <button onclick="calcular()">=</button>
+            <button onclick="limpiar('/')">C</button>
+            <button onclick="operar('/')">/</button>
+        </div>
+    </div>
+    <script>
+        let operacion = '';
+        let operador = '';
+        let resultadoMostrado = false;
+
+        function insertar(numero){
+            const resultado = document.getElementById('resultado');
+            if (resultadoMostrado){
+                resultado.value = '';
+                resultadoMostrado = false
+            }
+            resultado.value += numero;
+        }
+        function operar (op){
+            const resultado = document.getElementById('resultado');
+            if (resultado.value !== ''){
+                operacion = resultado.value;
+                operador = op;
+                resultado.value = '';
+            }
+        }
+        function calcular (){
+            const resultado = document.getElementById('resultado');
+            if (operacion !== '' && operador !== '' && resultado.value !== ''){
+                const numero1 = parseFloat(operacion);
+                const numero2 = parseFloat(resultado.value);
+                let resultadoFinal = 0;
+
+                switch (operador) {
+                    case '+':
+                    resultadoFinal = numero1 + numero2;
+                    break;
+                    case '-':
+                    resultadoFinal = numero1 - numero2;
+                    break;
+                    case '*':
+                    resultadoFinal = numero1 * numero2;
+                    break;
+                    case '/':
+                    resultadoFinal = numero1 / numero2;
+                    break;
+                }
+                resultado.value = resultadoFinal;
+                operacion = '';
+                operador = '';
+                resultadoMostrado = true;
+            }
+        }
+        function limpiar(){
+            const resultado = document.getElementById('resultado');
+            resultado.value = '';
+            operacion = '';
+            operador = '';
+        }
+
+    </script>
+</body>
+</html>

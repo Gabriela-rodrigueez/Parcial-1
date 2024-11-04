@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logearse</title>
+    <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+    
+  <div class="container-user-cart">
+    <a href="IsMaJo.html" class="tab">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-cart">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </svg>
+    </a>                      
+  </div>
+
+
+  <div class="container">
+    <div class="welcome">
+        <div class="pinkbox">
+
+          <!-- registrarse -->
+            <div class="signup nodisplay">
+                <h1>Registrarse</h1>
+                <form id="registerForm" action="http://localhost/Parcial1/registro.php" method="post" autocomplete="off">
+                    <input type="text" id="username" name="username" placeholder="Usuario" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    <input type="password" id="confirmPassword" placeholder="Confirmar Contraseña" required>
+                    <input type="date" id="date" name="date" placeholder="Fecha de Nacimiento" required>
+                      
+                    <!-- Términos y Condiciones  -->
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input type="checkbox" id="checkTerms" class="form-check-input" required>
+                        <label for="checkTerms" class="form-check-label">Acepto los términos y condiciones</label>
+                        <div class="invalid-feedback">Es necesario aceptar los términos y condiciones </div>
+                           <!--<p>Es necesario aceptar los términos y condiciones</p>  -->
+                      </div>
+                    </div>
+
+                    <!-- Botón Enviar  -->
+                    <button type="submit" class="button submit">Crear Cuenta</button>
+                    <div id="formMessage"></div>
+                </form>
+                
+                  
+                  
+
+                  
+            </div>
+
+
+            <!-- Iniciar seción -->
+            <div class="signin">
+                <h2>Iniciar Sesión</h2>
+                <!-- <form id="loginForm" class="more-padding" autocomplete="off">
+                    <input type="text" placeholder="Nombre de Usuario">
+                    <input type="password" placeholder="Contraseña">
+                    <div class="checkbox">
+                        <input type="checkbox" id="remember"><label for="remember">Recordar</label>
+                    </div>
+                    <button type="submit" class="button submit">Login</button>
+                </form> -->
+                <form id="loginForm" class="more-padding" action="login.php" method="POST" autocomplete="off">
+                  <input type="text" name="username" placeholder="Nombre de Usuario">
+                  <input type="password" name="password" placeholder="Contraseña">
+                  <div class="checkbox">
+                      <input type="checkbox" id="remember"><label for="remember">Recordar</label>
+                  </div>
+                  <button type="submit" class="button submit">Login</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="leftbox">
+          <h2 class="title"><span>IsMaJo</span></h2>
+          <p class="desc">Elige tu <span>ramo</span> perfecto</p>
+          <img class="flower smaller" src="https://image.ibb.co/d5X6pn/1357d638624297b.jpg" alt="Flower">
+          <p class="account">¿Tienes una cuenta?</p>
+          <button class="button" id="signin">Iniciar Sesión</button>
+        </div>
+        <div class="rightbox">
+          <h2 class="title"><span>IsMaJo</span></h2>
+          <p class="desc">Elige tu <span>ramo</span> perfecto</p>
+          <img class="flower" src="https://preview.ibb.co/jvu2Un/0057c1c1bab51a0.jpg" alt="Flower">
+          <p class="account">¿No tienes una cuenta?</p>
+          <button class="button" id="signup">Regístrate</button>
+        </div>
+    </div>
+  </div>
+  <button id="logout" class="button">Cerrar Sesión</button>
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="registro.js"></script>
+
+
+</body>
+</html>

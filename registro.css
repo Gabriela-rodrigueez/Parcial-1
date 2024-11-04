@@ -1,0 +1,253 @@
+/* icono home */
+.icon-cart{
+  width: 40px;
+  height: 30px;
+  stroke: #000;
+} 
+
+.icon-cart:hover{
+  cursor: pointer;
+}
+.container-home-cart{
+  position: relative;
+}
+/* Icono del carrito */
+.icon-cart{
+  width: 40px;
+  height: 30px;
+  stroke: #000;
+} 
+
+.icon-cart:hover{
+  cursor: pointer;
+}
+
+/* Contenedor del carrito de inicio */
+.container-home-cart{
+  position: relative;
+}
+
+/* Estilo del cuerpo */
+body {
+  background: #CBC0D3;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
+  background-color: #CBC0D3;
+}
+
+/* Estilo del contenedor principal */
+.container {
+  margin: auto;
+  width: 660px;
+  height: 550px;
+  position: relative;
+}
+
+/* Estilo de la bienvenida */
+.welcome {
+  background: #f6f6f6;
+  width: 750px;
+  height: 450px;
+  position: absolute;
+  top: 8%;
+  border-radius: 9px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+}
+
+/* Caja rosa */
+.pinkbox {
+  position: absolute;
+  top: -4.2%;
+  left: 6%;
+  background: #EAC7CC;
+  width: 345px;
+  height: 490px;
+  border-radius: 5px;
+  box-shadow: 2px 0 10px rgba(0,0,0,.1);
+  transition: all .5s ease-in-out;
+  z-index: 2;
+}
+
+/* Clases de visualización */
+.nodisplay {
+  display: none;
+  transition: all .5s ease;
+}
+
+/* Estilo para las cajas de la izquierda y la derecha */
+.leftbox, .rightbox {
+  position: absolute;
+  width: 50%;
+  transition: 1s all ease;
+}
+
+.leftbox {
+  left: -2%;
+}
+
+.rightbox {
+  right: -2%;
+}
+
+/* Estilo de fuentes y botones */
+h1, h2 {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: #f6f6f6;
+  font-size: 1.5em;
+  letter-spacing: 8px;
+}
+
+h1 {
+  margin-top: 45px;
+}
+
+h2 {
+  margin-top: 65px;
+}
+
+.title {
+  font-family: 'Lora', serif;
+  color: #8E9AAF;
+  font-size: 2em;
+  line-height: 1.1em;
+  letter-spacing: 3px;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 20%;
+}
+
+.desc {
+  margin-top: -8px;
+}
+
+.account {
+  margin-top: 45%;
+  font-size: 10px;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.85em;
+  letter-spacing: 2px;
+  color: #8E9AAF;
+  text-align: center;
+}
+
+span {
+  color: #EAC7CC;
+}
+
+.flower {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 46%;
+  left: 29%;
+  opacity: .7;
+}
+
+.smaller {
+  width: 90px;
+  height: 100px;
+  top: 48%;
+  left: 38%;
+  opacity: .9;
+}
+
+/* Botones */
+button {
+  padding: 13px;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3.5px;
+  font-size: 11px;
+  border-radius: 10px;
+  margin: auto;
+  outline: none;
+  display: block;
+}
+
+.button {
+  margin-top: 8%;
+  background: #f6f6f6;
+  color: darken(#EAC7CC, 20%);
+  border: solid 1px #EAC7CC;
+}
+
+.button:hover {
+  background: #EAC7CC;
+  color: #f6f6f6;
+  transition: background-color 1s ease-out;
+}
+
+/* Estilo para formularios */
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 7px;
+}
+
+.more-padding {
+  padding-top: 35px;
+}
+
+input {
+  background: #EAC7CC;
+  width: 75%;
+  color: darken(#EAC7CC, 20%);
+  border: none;
+  border-bottom: 1px solid rgba(#f6f6f6, 0.5);
+  padding: 9px;
+  margin: 7px;
+}
+
+input::placeholder {
+  color: rgba(#f6f6f6, 1);
+  letter-spacing: 2px;
+  font-size: 1.2em;
+  font-weight: 100;
+}
+
+input:focus {
+  color: darken(#EAC7CC, 20%);
+  outline: none;
+  border-bottom: 1.2px solid rgba(darken(#EAC7CC, 20%), 0.7);
+  font-size: 1em;
+  transition: .8s all ease;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+}
+
+/* Checkbox */
+label {
+  margin-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+  color: darken(#EAC7CC, 20%);
+  font-size: 0.95em;
+  letter-spacing: 1px;
+}
+
+.checkbox {
+  display: inline;
+  white-space: nowrap;
+  position: relative;
+  left: -92px;
+  top: 5px;
+}
+
+input[type=checkbox] {
+  width: 12px;
+  background: darken(#EAC7CC, 20%);
+}
+
+.checkbox input[type="checkbox"]:checked + label {
+  color: darken(#EAC7CC, 20%);
+  transition: .5s all ease;
+}
