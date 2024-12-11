@@ -107,15 +107,33 @@ const showHTML = () =>{
 
         rowProduct.append(containerProduct);
 
-        total = 
-            total + parseInt(product.quantity * product.price.slice(1));
-        totalOfProducts = totalOfProducts + product.quantity;
+
+    //     total = 
+    //         total + parseInt(product.quantity * product.price.slice(1));
+    //     totalOfProducts = totalOfProducts + product.quantity;
+
+    // });
+
+    // valorTotal.innerText = `$${total}`;
+    // countProducts.innerText = totalOfProducts;
+
+        // convertir el precio a número sin comas ni símbolos
+        const priceNumber = parseFloat(product.price.replace(/[$.]/g, '').replace(',','.'));
+        total += product.quantity * priceNumber;
+        totalOfProducts += product.quantity;
 
     });
 
-    valorTotal.innerText = `$${total}`;
-    countProducts.innerText = totalOfProducts;
+    // Convertir el totañ a formato moneda
+    const formattedTtotal = new Intl.NumberFormat('es-AR', {
+        style: 'currency',
+        currency: 'ARS',
+    }).format(total)
 
+    valorTotal.innerText = formattedTtotal;
+
+    // actualizar contador de productos para que se vea el signo + y no el 0
+countProducts.innerText = totalOfProducts === 0 ? '+' : totalOfProducts;
 
 };
 
@@ -127,6 +145,7 @@ const showHTML = () =>{
 // btnSearch.addEventListener('click', () =>{
 //     searchInput.classList.toggle('hidden-search');
 // })
+
 document.addEventListener('DOMContentLoaded', function() {
     // Variables de elementos del DOM
     const searchInput = document.querySelector('.search_input-text');
@@ -174,7 +193,7 @@ btnMenu.addEventListener('click', () =>{
 
 
 
-// boton cerrar sesión
+// boton cerrar sesión al logearse
 document.addEventListener("DOMContentLoaded", function() {
     const logoutButton = document.getElementById("logout");
 
