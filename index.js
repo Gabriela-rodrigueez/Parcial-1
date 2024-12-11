@@ -124,7 +124,7 @@ const showHTML = () =>{
 
     });
 
-    // Convertir el totañ a formato moneda
+    // Convertir el total a formato moneda
     const formattedTtotal = new Intl.NumberFormat('es-AR', {
         style: 'currency',
         currency: 'ARS',
